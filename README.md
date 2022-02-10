@@ -4,9 +4,9 @@ This repository contains data, scripts, and code for making the research in a JS
 
 ## Simulator code
 
-The simulator is hosted in [another repository](XXX). All experiments are conducted with the simulator with commit tag XXXX. A docker image is provided in which the simulator has been installed in `/usr/local/bin/scheduling_with_simulations_imulator`.
+The simulator is hosted in [another repository](XXX). All experiments are conducted with the simulator with commit tag `XXXX`. A Docker image called XXXX is provided in which the simulator is been installed in `/usr/local/bin/scheduling_with_simulations_imulator`.
 
-    - Install everytingm AND mongo in the DOCKER
+    - Install everytingm AND mongo in the DOCKER XXX
 
 ## Workflow JSON files
 
@@ -26,4 +26,6 @@ Scripts to extract and summarize simulation output data from the Mongo database 
 
 ## Scripts to plot/analyze the simulation output
 
-Scripts to plot/analyze extracted simulation output data are available in the `plot_scripts` directory.  These scripts take as input the `*dict` files available in the `extract_scripts` directory.
+Scripts to plot/analyze extracted simulation output data are available in the `plot_scripts` directory.  These scripts take as input the `*.dict` files available in the `extract_scripts` directory.
+
+---
