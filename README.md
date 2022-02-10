@@ -4,7 +4,7 @@ This repository contains data, scripts, and code for making the research in a JS
 
 ## Simulator code
 
-The simulator is hosted in [another repository](XXX). All experiments are conducted with the simulator with commit tag `XXXX`. A Docker image called XXXX is provided in which the simulator is been installed in `/usr/local/bin/scheduling_with_simulations_imulator`.
+The simulator is hosted in [another repository](XXX). All experiments are conducted with the simulator with commit tag `XXXX`. A Docker image is provided in which the simulator is been installed in `/usr/local/bin/scheduling_with_simulations_imulator`. The `Dockerfile` is available in the `simulator` directory. 
 
     - Install everytingm AND mongo in the DOCKER XXX
 
