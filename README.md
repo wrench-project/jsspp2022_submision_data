@@ -5,13 +5,13 @@ This repository contains data, scripts, and code for making the research in a JS
 ## Simulator code
 
 The simulator is hosted in [another repository](https://github.com/wrench-project/scheduling_using_simulation_simulator). All experiments are
-conducted with the simulator with commit tag `b58de28b66d80df91d1a57855acf967f2c4b7c81`. 
-A [Dockerfile](https://docs.docker.com/engine/reference/builder/) for a Docker image in which the simulator is installed in
+conducted with the simulator's code at commit tag `b58de28b66d80df91d1a57855acf967f2c4b7c81`. 
+A [Dockerfile](https://docs.docker.com/engine/reference/builder/) for a Docker image with the simulator installed in
 `/usr/local/bin/scheduling_using_simulation_simulator` is 
 available in `simulator/Dockerfile`. Cloning this repository into a
-container for that image is likely the easiest way to run all scripts
+container for this image is likely the easiest way to run all scripts
 mentioned hereafter. Here are the steps for building the image, starting a
-container, logging into it, and cloning this repository:
+container for the image, logging into the container, and cloning this repository:
 
 ```
 cd simulator/
@@ -26,7 +26,7 @@ All JSON workflow description files, which are [WfCommons instances](https://wfc
 
 ## Script to run all simulations
 
-A script to run all simulations is available in `run_script/run_all_simulations.py`. It requires that a Mongo daemon run locally, so that simulation output can be stored in a database.  This script takes as input a number of threads to use and a list of compute platform configurations to simulate. For instance, to run this script in the Docker container, first start a Mongo daemon:
+A script to run all simulations is available in `run_script/run_all_simulations.py`. It requires that a `mongod` daemon be started locally, so that simulation output can be stored in a Mongo database.  This script takes as input a number of threads to use and a list of compute platform configurations to simulate. For instance, to run this script in the Docker container, first start a Mongo daemon:
 
 ```
 mkdir /tmp/db
@@ -40,9 +40,7 @@ cd jsspp2022_submission_data/run_scripts
 ./run_all_simulations.py 4 0,1,2,3,4,5,6,7,8
 ```
 
-Note that the above will run for a VERY long time (we ran it on VMs on the
-cloud, one per platform configuration, with 48 threads on each). We highly
-recommend you use the provided database dump below. 
+Note that the above will run for a VERY long time (we ran it on multiple VMs on the cloud with 48 threads on each, each running some of the platform configurations, for days). We highly recommend you use the provided database dump below. 
 
 ## Simulation raw output
 
@@ -57,11 +55,11 @@ mongorestore simulation-result-dump
 
 ## Scripts to extract simulation output from Mongo
 
-A script to extract and summarize simulation output data from the Mongo database is available in `extract_script/extract_all_results.py`. This script generates several `*.dict` files, which are also included in the `extract_script/` directory.  If you want to run the script to (re-) generate these `*.dict` files, make sure that a Mongo daemon runs locally that has been fed the database dump in directory `mongo_db_dump/` directory. 
+A script to extract and summarize simulation output data from the Mongo database is available in `extract_script/extract_all_results.py`. This script generates several `*.dict` files, which are also included in the `extract_script/` directory.  If you want to run the script to (re-) generate these `*.dict` files, make sure that a Mongo daemon runs locally that has been fed the database dump in `mongo_db_dump/simulation-result-dump.zip`.
 
 
 ## Scripts to plot/analyze the simulation output
 
-Scripts to plot/analyze extracted simulation output data are available in the `plot_scripts/` directory.  These scripts take as input the `*.dict` files available in the `extract_scripts/` directory and generate `.pdf` images and text output, which are the basis for presenting simulation results in the paper.
+Scripts to plot/analyze extracted simulation output data are available in the `plot_scripts/` directory.  These scripts take as input the `*.dict` files in the `extract_scripts/` directory and generate `.pdf` images and text output, which are the basis for presenting simulation results in the paper.
 
 ---
