@@ -142,17 +142,16 @@ if __name__ == "__main__":
                 p.map(run_simulation, commands_to_run)
 
         # Our algorithm, varying alpha
-        sys.stderr.write("Running our algorithm with a fixed frequency (alpha) of 0.1\n")
-        speculative_work_fractions = [1.0]
+        sys.stderr.write("Running our algorithm with varying alpha values\n")
         periodic_scheduler_change_triggers = [0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5]
         noises = [0.0, 0.1, 0.2, 0.4, 0.8]
 
         for periodic_scheduler_change_trigger in periodic_scheduler_change_triggers:
+            sys.stderr.write("alpha =  " + str(periodic_scheduler_change_trigger) + "\n")
             periodic_scheduler_change_trigger = "--periodic_scheduler_change_trigger " + str(
                 periodic_scheduler_change_trigger) + " "
 
             for workflow in workflow_json_files:
-                sys.stderr.write("  " + workflow + "\n")
                 commands_to_run = []
                 speculative_work_fraction = "--speculative_work_fraction 1.0"
                 for noise in noises:

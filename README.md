@@ -7,12 +7,10 @@ This repository contains data, scripts, and code for making the research in a JS
 The simulator is hosted in [another repository](https://github.com/wrench-project/scheduling_using_simulation_simulator). All experiments are
 conducted with the simulator with commit tag `XXXX`. A Docker image is
 provided in which the simulator is been installed in
-`/usr/local/bin/scheduling_using_simulations_simulator`. The `Dockerfile` is
+`/usr/local/bin/scheduling_using_simulation_simulator`. The `Dockerfile` is
 available in the `simulator` directory. Cloning this repository into a
 container for that image is likely the easiest way to run all scripts
 mentioned hereafter.
-
-    - Install everytingm AND mongo in the DOCKER XXX
 
 ## Workflow JSON files
 
@@ -20,7 +18,20 @@ All JSON workflow description files, which are [WfCommons instances](https://wfc
 
 ## Script to run all simulations
 
-A script to run all simulations is available in `run_script/run_all_simulations.py`. It requires that a Mongo daemon run locally, so that simulation output can be stored in a database.  This script takes as input a list of compute platform configurations to simulate. For instance, to run this script in 
+A script to run all simulations is available in `run_script/run_all_simulations.py`. It requires that a Mongo daemon run locally, so that simulation output can be stored in a database.  This script takes as input a number of threads to use and a list of compute platform configurations to simulate. For instance, to run this script in the Docker container:
+
+```
+mkdir /tmp/db
+mongod --dbpath=/tmp/db & 
+cd jsspp2022_submission_data/run_scripts
+./run_all_simulations.py 4  0,1,2,3,4,5,6,7,8
+```
+
+Note that the above will run for a VERY long time (we ran it on VMS on the
+cloud, one per platform configuration, with 48 threads on each). We highly
+recommend you use the provided database dump below.
+
+
 
 ## Simulation raw output
 
