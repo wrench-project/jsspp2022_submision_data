@@ -86,7 +86,7 @@ if __name__ == "__main__":
 
     # Build list of commands
     ####################
-    simulator = "scheduling_with_simulations_simulator "
+    simulator = "scheduling_using_simulation_simulator "
 
     reference_flop = " --reference_flops 100Gf --wrench-energy-simulation "
     scheduler_change_trigger = "--first_scheduler_change_trigger 0.00 "
