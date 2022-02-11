@@ -86,7 +86,7 @@ if __name__ == "__main__":
 
     # Build list of commands
     ####################
-    simulator = "scehduling_with_simulations_simulator "
+    simulator = "scheduling_with_simulations_simulator "
 
     reference_flop = " --reference_flops 100Gf --wrench-energy-simulation "
     scheduler_change_trigger = "--first_scheduler_change_trigger 0.00 "
@@ -132,7 +132,7 @@ if __name__ == "__main__":
                     else:
                         seeds = range(1000, 1000 + num_samples)
                     for seed in seeds:
-                        command = "../build/simulator " + platform + reference_flop + scheduler_change_trigger + periodic_scheduler_change_trigger + speculative_work_fraction
+                        command = simulator + platform + reference_flop + scheduler_change_trigger + periodic_scheduler_change_trigger + speculative_work_fraction
                         # All algorithms BUT random
                         command += " --workflow " + workflow + " --algorithms 0-" + str(num_algorithms - 2)
                         command += " --simulation_noise " + str(noise) + " --noise_seed " + str(seed)
