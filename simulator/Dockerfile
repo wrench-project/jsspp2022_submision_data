@@ -37,14 +37,14 @@ RUN python3 -m pip install matplotlib
 # WRENCH's user
 #################################################
 
-#RUN useradd -ms /bin/bash wrench 
-#RUN adduser wrench sudo
+RUN useradd -ms /bin/bash me 
+RUN adduser me sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-USER wrench
-WORKDIR /home/wrench
+USER me
+WORKDIR /home/me
 ENV CXX="g++-9" CC="gcc-9"
 
-RUN /bin/rm -r ./examples 
-RUN echo "Clone the jsspp2022_submission_data repo: git clone https://github.com/wrench-project/jsspp2022_submision_data.git" > /home/wrench/README
-RUN echo "And follow the instructions in the README at https://github.com/wrench-project/jsspp2022_submision_data" >> /home/wrench/README
+#RUN /bin/rm -rfi ./examples 
+RUN echo "Clone the jsspp2022_submission_data repo: git clone https://github.com/wrench-project/jsspp2022_submision_data.git" > /home/me/README
+RUN echo "And follow the instructions in the README at https://github.com/wrench-project/jsspp2022_submision_data" >> /home/me/README

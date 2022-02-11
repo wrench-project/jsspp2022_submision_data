@@ -38,7 +38,6 @@ if __name__ == "__main__":
     frequencies = [0.1, 0.2]
 
     workflows = sorted(list(results[frequencies[0]].keys()))
-    workflows.remove("seismology-chameleon-700p-001.json")
 
     clusters = list(results[frequencies[0]][workflows[0]].keys())
     clusters = ["32:8:100Gf:100MBps,32:8:200Gf:200MBps,32:8:300Gf:300MBps"]
