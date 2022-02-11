@@ -7,10 +7,18 @@ This repository contains data, scripts, and code for making the research in a JS
 The simulator is hosted in [another repository](https://github.com/wrench-project/scheduling_using_simulation_simulator). All experiments are
 conducted with the simulator with commit tag `XXXX`. A Docker image is
 provided in which the simulator is been installed in
-`/usr/local/bin/scheduling_using_simulation_simulator`. The `Dockerfile` is
-available in the `simulator` directory. Cloning this repository into a
+`/usr/local/bin/scheduling_using_simulation_simulator`. The Docker file is 
+available in `simulator/Dockerfile` directory. Cloning this repository into a
 container for that image is likely the easiest way to run all scripts
-mentioned hereafter.
+mentioned hereafter. Here are the steps for building the image, starting a
+container, and logging into it.
+
+```
+cd simulator/
+docker build -t reproducible_research .
+docker run -it --rm reproducible_research /bin/bash
+cat README
+```
 
 ## Workflow JSON files
 

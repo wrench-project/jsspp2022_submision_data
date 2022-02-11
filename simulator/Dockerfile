@@ -47,3 +47,4 @@ ENV CXX="g++-9" CC="gcc-9"
 
 RUN /bin/rm -r ./examples 
 RUN echo "Clone the jsspp2022_submission_data repo: git clone https://github.com/wrench-project/jsspp2022_submision_data.git" > /home/wrench/README
+RUN echo "And follow the instructions in the README at https://github.com/wrench-project/jsspp2022_submision_data" >> /home/wrench/README
