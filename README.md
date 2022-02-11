@@ -24,14 +24,12 @@ A script to run all simulations is available in `run_script/run_all_simulations.
 mkdir /tmp/db
 mongod --dbpath=/tmp/db & 
 cd jsspp2022_submission_data/run_scripts
-./run_all_simulations.py 4  0,1,2,3,4,5,6,7,8
+./run_all_simulations.py 4 0,1,2,3,4,5,6,7,8
 ```
 
 Note that the above will run for a VERY long time (we ran it on VMS on the
 cloud, one per platform configuration, with 48 threads on each). We highly
 recommend you use the provided database dump below.
-
-
 
 ## Simulation raw output
 
@@ -40,7 +38,9 @@ Simulation raw output is available as a Mongo database dump in the `mongo_db_dum
 Here are the steps to inject the database dump into a Mongo daemon that has been started locally:
 
 ```
-cd mongo_db_dump/
+mkdir /tmp/db
+mongod --dbpath=/tmp/db &
+cd jsspp2022_submission_data/mongo_db_dump/
 unzip simulation-result-dump.zip
 mongorestore simulation-result-dump
 ```
@@ -48,6 +48,7 @@ mongorestore simulation-result-dump
 ## Scripts to extract simulation output from Mongo
 
 A script to extract and summarize simulation output data from the Mongo database is available in `extract_script/extract_all_results.py`. This script generates several `*.dict` files, which are also included in the `extract_script` directory.  If you want to run the script to (re-) generate these `*.dict` files, make sure that a Mongo daemon runs locally that has been fed the database dump in directory `mongo_db_dump` directory. 
+
 
 ## Scripts to plot/analyze the simulation output
 
