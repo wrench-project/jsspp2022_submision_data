@@ -30,7 +30,7 @@ A script to run all simulations is available in `run_script/run_all_simulations.
 
 ```
 mkdir /tmp/db
-mongod --dbpath=/tmp/db 
+mongod --dbpath /tmp/db 
 ```
 
 and (in another terminal connected to the container):
