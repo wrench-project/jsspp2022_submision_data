@@ -23,7 +23,7 @@ RUN apt-get update
 RUN apt-get -y install -y mongodb-org
 
 # clone and install the scheduling_with_simulations_simulator with the right commit tab
-RUN git clone  https://github.com/wrench-project/scheduling_using_simulation_simulator.git && cd scheduling_using_simulation_simulator && git checkout 78a22933e7fd2beacc7efc802d46569e2044ea02 &&  mkdir build && cd build && cmake .. && make -j4 && sudo make install && cd ../.. && /bin/rm -rf scheduling_using_simulation_simulator/
+RUN git clone  https://github.com/wrench-project/scheduling_using_simulation_simulator.git && cd scheduling_using_simulation_simulator && git checkout b58de28b66d80df91d1a57855acf967f2c4b7c81 &&  mkdir build && cd build && cmake .. && make -j4 && sudo make install && cd ../.. && /bin/rm -rf scheduling_using_simulation_simulator/
 
 # install pip
 RUN wget https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py && /bin/rm get-pip.py

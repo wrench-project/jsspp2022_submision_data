@@ -5,7 +5,7 @@ This repository contains data, scripts, and code for making the research in a JS
 ## Simulator code
 
 The simulator is hosted in [another repository](https://github.com/wrench-project/scheduling_using_simulation_simulator). All experiments are
-conducted with the simulator with commit tag `XXXX`. A Docker image is
+conducted with the simulator with commit tag `b58de28b66d80df91d1a57855acf967f2c4b7c81`. A Docker image is
 provided in which the simulator is been installed in
 `/usr/local/bin/scheduling_using_simulation_simulator`. The Docker file is 
 available in `simulator/Dockerfile` directory. Cloning this repository into a
