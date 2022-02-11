@@ -15,7 +15,8 @@ RUN echo "America/Los_Angeles" > /etc/timezone && export DEBIAN_FRONTEND=noninte
 
 # install basic things, just in case
 RUN apt-get -y install vim pkg-config git cmake cmake-data wget sudo curl zip
-# install mongo (likely old version, but that's ok)
+
+# install mongo
 RUN apt-get -y install gnupg
 RUN wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | apt-key add -
 RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-5.0.list
