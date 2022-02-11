@@ -6,7 +6,7 @@ This repository contains data, scripts, and code for making the research in a JS
 
 The simulator is hosted in [another repository](https://github.com/wrench-project/scheduling_using_simulation_simulator). All experiments are
 conducted with the simulator with commit tag `b58de28b66d80df91d1a57855acf967f2c4b7c81`. 
-A Dockerfile for a Docker image in which the simulator is installed in
+A [Dockerfile](https://docs.docker.com/engine/reference/builder/) for a Docker image in which the simulator is installed in
 `/usr/local/bin/scheduling_using_simulation_simulator` is 
 available in `simulator/Dockerfile`. Cloning this repository into a
 container for that image is likely the easiest way to run all scripts
@@ -62,6 +62,6 @@ A script to extract and summarize simulation output data from the Mongo database
 
 ## Scripts to plot/analyze the simulation output
 
-Scripts to plot/analyze extracted simulation output data are available in the `plot_scripts` directory.  These scripts take as input the `*.dict` files available in the `extract_scripts/` directory. The generate `.pdf` images and text output, which is used in the paper to discuss simulation results.
+Scripts to plot/analyze extracted simulation output data are available in the `plot_scripts/` directory.  These scripts take as input the `*.dict` files available in the `extract_scripts/` directory and generate `.pdf` images and text output, which are the basis for presenting simulation results in the paper.
 
 ---
