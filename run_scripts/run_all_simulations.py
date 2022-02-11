@@ -103,6 +103,7 @@ if __name__ == "__main__":
     for platform_config_index in platform_configs:
 
         platform = platform_configurations[platform_config_index]
+        system.stderr.write("PLATFORM: " + platform)
 
         # Standard algorithms
         sys.stderr.write("Running individual algorithms...\n")
