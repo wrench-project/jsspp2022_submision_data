@@ -10,7 +10,7 @@ def generate_plot(x):
 
     fontsize = 18
 
-    output_file = "relative_difference.pdf"
+    output_file = "baseline_algorithm_dfbs.pdf"
 
     sys.stderr.write("Generating " + output_file + "...\n")
 
@@ -25,7 +25,6 @@ def generate_plot(x):
 
     plt.yscale("log")
 
-    plt.plot(values, y, 'b', linewidth=3.0)
     
     #plotting dots to represent algorithm
     i = 0
@@ -34,19 +33,22 @@ def generate_plot(x):
     for cluster in dots:
         for algo, diff in cluster.items():
             if algo != "8":
-                plt.plot(i, max(0.1, diff), 'o', markersize=1.5, color='0.4')
+                plt.plot(i, max(0.1, diff), 'x', markersize=5, color='0.4')
             else:
-                plt.plot(i, max(0.1, diff), "o", markersize=3, color='r')
+                plt.plot(i, max(0.1, diff), "o", markersize=7, color='r')
         i += 1
+
+    #plotting the blue line
+    plt.plot(values, y, 'b', linewidth=4.0)
 
     plt.xticks(values, x.keys(), rotation=90, fontsize=fontsize-5)
     plt.yticks(fontsize=fontsize)
-    plt.xlabel("Configurations (Workflow:Platform)",fontsize=fontsize)
-    plt.ylabel("% makespan difference",fontsize=fontsize)
+    plt.xlabel("Experimental scenario (Workflow:Platform)",fontsize=fontsize+1)
+    plt.ylabel("% degradation from best",fontsize=fontsize+1)
    
     plt.tight_layout()
 
-    ax.set_ylim(0.095, 1000)
+    ax.set_ylim(0.090, 1000)
     ax.set_yticks([0.1, 1, 10, 100, 1000])
     ax.set_yticklabels(["$\leq 0.1$", 1, 10, 100, 1000])
 
